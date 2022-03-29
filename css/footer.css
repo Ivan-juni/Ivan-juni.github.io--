@@ -97,7 +97,7 @@ footer {
         text-align: center;
     }
     .footer__link {
-        font-size: 12px;
+        font-size: 16px;
     }
     .footer-social__item img {
         width: 30px;
@@ -111,13 +111,13 @@ footer {
         height: 100%;
         display: flex;
         max-width: 100%;
-        flex-direction: row;
+        flex-direction: column;
         /* justify-content: space-between; */
     }
     .footer__navbar {
         text-align: center;
         min-width: 0px;
-        margin-left: 20px;
+        margin-left: 0px;
     }
     .footer-navbar__item {
         margin-right: 0px;
@@ -125,18 +125,15 @@ footer {
         display: block;
     }
     .footer__social {
-        margin-right: 20px;
+        margin-right: 0px;
+        align-self: center;
     }
     .footer-social__item {
-        margin-right: 0px;
-        margin-top: 10px;
-        display: block;
+        margin-right: 10px;
+        display: inline;
     }
     .footer__link {
         font-size: 18px;
-    }
-    .footer-social__item img {
-        width: 125%;
     }
 }
 /* !footer end */
