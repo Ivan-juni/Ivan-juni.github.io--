@@ -11,7 +11,8 @@ header {
 /* !navbar start */
 #navContent {
     text-align: center;
-    margin-bottom: -100px;
+    margin-top: 42px;
+    margin-bottom: -110px;
 }
 .collapse {
     flex-direction: column;
@@ -310,4 +311,7 @@ h1 {
 @media (max-width: 992px) {
 }
 @media (max-width: 768px) {
+    #thumb-2 {
+        margin-top: -73px;
+    }
 }
