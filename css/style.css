@@ -1,14 +1,20 @@
+/* .wrapper {
+    width: 1100px;
+    margin: 0 auto;
+} */
 header {
     height: 100vh;
     background: url(../images/bg.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
-/* .wrapper {
-    width: 1100px;
-    margin: 0 auto;
-} */
 /* !navbar start */
+.nav-link {
+    padding-bottom: 0px;
+}
+.navbar {
+    padding-top: 0px;
+}
 #navContent {
     text-align: center;
 }
@@ -46,7 +52,7 @@ input {
     background: transparent;
 }
 input::placeholder {
-    opacity: 100%;
+    opacity: 80%;
     font-family: "Roboto Slab";
     font-style: normal;
     font-weight: 400;
@@ -71,6 +77,9 @@ input::placeholder {
     line-height: 26px;
     color: #324950;
 }
+body._lock {
+    overflow: hidden;
+}
 /* !navbar end */
 
 /*! caption start*/
@@ -78,15 +87,18 @@ input::placeholder {
     display: flex;
     height: 100%;
     margin-top: 229px;
+    /* max-height: 500px; */
 }
 .header__caption {
     display: flex;
     flex-direction: column;
     text-align: center;
     margin: 0 auto;
+    max-height: 300px;
 }
 .caption__btn {
     margin-top: 60px;
+    margin-bottom: 100px;
 }
 .caption__text {
     font-family: "Roboto Slab";
@@ -138,7 +150,7 @@ input::placeholder {
     margin-top: 46px;
     margin-bottom: 41px;
 }
-.container__items {
+.cultures__items {
     display: flex;
     justify-content: space-between;
     margin-right: 10px;
@@ -304,7 +316,7 @@ h1 {
     }
 }
 @media (max-width: 1200px) {
-    .container__items {
+    .cultures__items {
         justify-content: center;
     }
     .container__card {
@@ -333,6 +345,12 @@ h1 {
     }
 }
 @media (max-width: 992px) {
+    .wrapper__caption {
+        display: flex;
+        height: 100%;
+        margin-top: 100px;
+        /* max-height: 500px; */
+    }
 }
 @media (max-width: 768px) {
     .activities h1 {
