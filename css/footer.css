@@ -1,9 +1,18 @@
 /* !footer start */
+html,
+body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
 main {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
 }
 footer {
     flex-shrink: 0;
+    flex: 1 0 auto;
 }
 
 /* ?floor-1 start */

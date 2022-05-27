@@ -9,6 +9,8 @@
 /* !navbar start */
 .container {
     max-width: 1110px;
+    padding-left: 0px;
+    padding-right: 10px;
 }
 .nav-link {
     padding-bottom: 0px;
@@ -22,6 +24,7 @@
 .collapse {
     flex-direction: column;
     flex-flow: column-reverse;
+    background: #ffffff;
 }
 .collapse form {
     align-self: flex-end;
@@ -81,4 +84,16 @@ input::placeholder {
 body._lock {
     overflow: hidden;
 }
+.navbar-collapse,
+.show,
+.collapsing {
+    margin-right: -15px;
+    margin-top: 0px;
+    background: #fff;
+}
 /* !navbar end */
+@media (max-width: 500px) {
+    .navbar-brand {
+        width: 75%;
+    }
+}
