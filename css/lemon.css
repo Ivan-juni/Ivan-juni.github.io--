@@ -1,7 +1,7 @@
 html,
 body {
     height: 100%;
-    background: #fcfcb89f;
+    background: rgb(255, 245, 185);
 }
 section#background {
     margin-top: 130px;
@@ -16,7 +16,6 @@ section#background {
     height: 100%;
 }
 section#content h1 {
-    background: #fcfcb89f;
     font-family: "Roboto Slab";
     font-style: normal;
     font-weight: 700;
@@ -83,7 +82,7 @@ section#content h1 {
 }
 /* !block-2 */
 .wrapper__block-2 {
-    background: #fcfcb89f;
+    background: #fcfca4;
     margin-left: -20px;
     margin-right: -20px;
     padding-left: 20px;
