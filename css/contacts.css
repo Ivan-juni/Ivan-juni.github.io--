@@ -38,6 +38,7 @@ h1 {
     font-size: 44px;
     line-height: 142.7%;
     color: #324950;
+    margin-bottom: 20px;
 }
 .caption__union {
     margin-top: 40px;
@@ -217,6 +218,39 @@ select.disabled {
 .address__info li #tel {
     color: #57984c;
 }
+
+table.cart {
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid #57984c;
+}
+table img {
+    width: 100px;
+}
+.cart th,
+td {
+    padding: 10px;
+    border: 3px solid #57984c;
+    text-align: center;
+}
+.cart td:first-child {
+    width: 120px;
+}
+.cart td:last-child {
+    width: 75px;
+}
+.fields__item {
+    margin-bottom: 20px;
+}
+.fields__item h2 {
+    margin-bottom: 10px;
+}
+.contact__fields {
+    text-align: center;
+}
+.goto-cart_disabled {
+    display: none;
+}
 /* !media */
 @media (max-width: 1200px) {
     .wrapper__form {
@@ -270,9 +304,9 @@ select.disabled {
     .body__right {
         max-width: 250px;
     }
-    .navbar-collapse.collapse {
+    /* .navbar-collapse.collapse {
         margin-right: 7px;
-    }
+    } */
 }
 @media (max-width: 992px) {
 }

@@ -51,6 +51,8 @@ body {
     flex-direction: column;
 }
 .button-download {
+    padding-top: 9px;
+    text-decoration: none;
     align-self: flex-end;
     font-family: "Roboto Slab";
     font-style: normal;
@@ -65,16 +67,20 @@ body {
     border-radius: 60px;
     text-align: center;
 }
+.goto-cart {
+    align-self: flex-end;
+}
 .button__ico {
     margin-right: 20px;
 }
 .button-download:hover {
     transition: 0.3s;
-    border: 2px solid #cf2333;
-    color: #cf2333;
+    border: 2px solid #fddb17;
+    color: #fddb17;
 }
 .button-download:hover path {
-    fill: #cf2333;
+    transition: 0.3s;
+    fill: #fddb17;
 }
 .main-info__thumb {
     margin-bottom: 30px;
@@ -181,6 +187,10 @@ h3 {
 }
 span#br {
     margin-right: 50px;
+}
+.thumb__picture {
+    width: 540px;
+    height: 498px;
 }
 /* !media */
 @media (max-width: 1200px) {
