@@ -36,7 +36,7 @@
                             <a href="#" class="nav-link">Company Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./products.html" class="nav-link">Products</a>
+                            <a href="./lemon.html" class="nav-link">Products</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">Services</a>
@@ -61,43 +61,67 @@
         </section>
         <section id="content">
             <div class="wrapper">
-                <div class="wrapper__form">
+                <div class="wrapper__form" id="app">
                     <div class="form__caption">
                         <h1>Contact us</h1>
+                        <table class="cart">
+                            <h2 v-if="cart!=0">Cart</h2>
+                            <tbody>
+                                <tr v-if="cart" v-for="c in cart">
+                                    <td><img :src="'./img/'+c.image" alt=""></td>
+                                    <td>{{c.title}}</td>
+                                    <td>{{c.short_text}}</td>
+                                    <td>
+                                        <button v-on:click="removeFromCart(c.id)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                <path
+                                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
                         <div class="caption__union">
                             <img class="union__thumb" src="./images/union.svg" alt="union" />
                         </div>
                     </div>
                     <div class="form__body">
-                        <form action="!#" method="POST">
+                        <form action="!#" method="POST" @submit.prevent="makeOrder()" id="form">
                             <div class="body__left">
                                 <div class="left__input input-1">
                                     <h2>Name *</h2>
-                                    <input type="text" name="firstname" id="firstname" onchange="toggleButton()">
+                                    <input v-model="contactFields.name" required type="text" name="firstname"
+                                        id="firstname" onchange="toggleButton()">
                                 </div>
                                 <div class=" left__input input-2">
                                     <h2>Company Name</h2>
-                                    <input type="text" name="companyName">
+                                    <input v-model="contactFields.companyName" type="text" name="companyName">
                                 </div>
                                 <div class="left__input input-3">
                                     <h2>Position</h2>
-                                    <input type="text" name="position">
+                                    <input v-model="contactFields.position" type="text" name="position">
                                 </div>
                                 <div class="left__input input-4">
                                     <h2>City</h2>
-                                    <input type="text" name="city">
+                                    <input v-model="contactFields.city" type="text" name="city">
                                 </div>
                                 <div class="left__input input-5">
                                     <h2>Country</h2>
-                                    <input type="text" name="country">
+                                    <input v-model="contactFields.country" type="text" name="country">
                                 </div>
                                 <div class="left__input input-6">
                                     <h2>Telephone</h2>
-                                    <input type="tel" name="tel">
+                                    <input v-model="contactFields.telephone" type="tel" name="tel">
                                 </div>
                                 <div class="left__input input-7">
                                     <h2>Email *</h2>
-                                    <input type="email" name="email" id="email" onchange="toggleButton()">
+                                    <input v-model="contactFields.email" required type="email" name="email" id="email"
+                                        onchange="toggleButton()">
                                 </div>
                             </div>
                             <div class="body__right">
@@ -122,7 +146,7 @@
                                     <div class="submit__field">
                                         <div class="captcha__field">
                                             <img src="./images/captcha.png" alt="captcha" class="captcha__thumb">
-                                            <input type="text" name="captcha" class="input__captcha">
+                                            <input required type="text" name="captcha" class="input__captcha">
                                         </div>
                                         <div class="submit__button">
                                             <button type="submit" id="submitButton" disabled class="disabled">Send
@@ -132,6 +156,36 @@
                                 </div>
                             </div>
                         </form>
+                    </div>
+                    <div class="contact__fields" v-if="fieldsVisible">
+                        <div class="fields__item name">
+                            <h2>Name:</h2>
+                            <h2>{{contactFields.name}}</h2>
+                        </div>
+                        <div class="fields__item company-name">
+                            <h2>Company Name:</h2>
+                            <h2>{{contactFields.companyName}}</h2>
+                        </div>
+                        <div class="fields__item position">
+                            <h2>Position:</h2>
+                            <h2>{{contactFields.position}}</h2>
+                        </div>
+                        <div class="fields__item city">
+                            <h2>City:</h2>
+                            <h2>{{contactFields.city}}</h2>
+                        </div>
+                        <div class="fields__item country">
+                            <h2>Country:</h2>
+                            <h2>{{contactFields.country}}</h2>
+                        </div>
+                        <div class="fields__item telephone">
+                            <h2>Telephone:</h2>
+                            <h2>{{contactFields.telephone}}</h2>
+                        </div>
+                        <div class="fields__item email">
+                            <h2>Email:</h2>
+                            <h2>{{contactFields.email}}</h2>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -185,8 +239,9 @@
         </div>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="./script/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
         crossorigin="anonymous"></script>
